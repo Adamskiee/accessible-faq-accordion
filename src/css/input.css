@@ -49,17 +49,27 @@
     .header > img {
         @apply w-6 h-6;
     }
+    .article {
+        @apply flex flex-col border-b border-b-purple-100 py-4 last-of-type:border-none last-of-type:pb-0 gap-4;
+    }
+    .question-btn {
+        @apply flex items-center justify-between gap-2 outline-none;
+    }
+    .question-btn:hover .question {
+        @apply text-purple-700;
+    }
+    .question-btn:focus .question {
+        @apply text-purple-700;
+    }
+    
+    /* Text Styles */
     .header > h1 {
         @apply font-bold text-3xl text-purple-950;
     }
-    .article {
-        @apply flex flex-col  border-b border-b-purple-100 py-4 last-of-type:border-none last-of-type:pb-0 gap-4;
-    }
-    .question-btn {
-        @apply flex text-start font-semibold items-center justify-between gap-2 text-purple-950;
+    .question {
+        @apply text-purple-950 font-semibold text-start;
     }
     .answer {
         @apply text-sm text-purple-600
     }
-
 }
