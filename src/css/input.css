@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    :root {
+        --white: hsl(0, 100%, 100%);
+        --purple-100: hsl(275, 100%, 97%);
+        --purple-600: hsl(292, 16%, 49%);
+        --purple-700: hsl(281, 83%, 54%);
+        --purple-950: hsl(292, 42%, 14%);
+    }
+    @font-face {
+        font-family: "Work Sans";
+        src: url(/build/fonts/WorkSans-Regular.ttf) format("truetype");
+        font-weight: 400;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Work Sans";
+        src: url(/build/fonts/WorkSans-SemiBold.ttf) format("truetype");
+        font-weight: 600;
+        font-style: normal;
+        font-display: swap;
+    }
+    @font-face {
+        font-family: "Work Sans";
+        src: url(/build/fonts/WorkSans-Bold.ttf) format("truetype");
+        font-weight: 700;
+        font-style: normal;
+        font-display: swap;
+    }
+}
+
+@layer components {
+    body {
+        @apply flex items-center justify-center min-h-screen font-worksans bg-purple-100;
+        background-image: url(/build/images/background-pattern-mobile.svg);
+        background-repeat: no-repeat;
+        background-position: top;
+    }
+    .container {
+        @apply max-w-xs bg-white rounded-md px-6 py-6 flex flex-col shadow-xl;
+    }
+    .header {
+        @apply flex items-center gap-7
+    }
+    .header > img {
+        @apply w-6 h-6;
+    }
+    .header > h1 {
+        @apply font-bold text-3xl text-purple-950;
+    }
+    .article {
+        @apply flex flex-col  border-b border-b-purple-100 py-4 last-of-type:border-none last-of-type:pb-0 gap-4;
+    }
+    .question-btn {
+        @apply flex text-start font-semibold items-center justify-between gap-2 text-purple-950;
+    }
+    .answer {
+        @apply text-sm text-purple-600
+    }
+
+}
