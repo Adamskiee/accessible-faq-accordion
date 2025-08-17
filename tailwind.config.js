@@ -1,11 +1,23 @@
+import fluid, {extract, screens, fontSize} from "fluid-tailwind";
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: ["./*.html",
+export default {
+  content: {
+    files: ["./*.html",
      "./src/js/**/*.js",
      "./src/css/**/*.css"
     ],
+    extract,
+  },
   theme: {
+    fontSize,
     extend: {
+      screens: {
+        ...screens,
+        "mobile": "23.4375rem",
+        "desktop":"90rem",
+        "lg-mobile-desktop":{"min":"376px"}
+      },
       fontFamily: {
         worksans: ["Work Sans", "sans-serif"]
       },
@@ -18,6 +30,8 @@ module.exports = {
       }
     },
   },
-  plugins: [],
+  plugins: [
+    fluid(),
+  ],
 }
 

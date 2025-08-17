@@ -592,53 +592,77 @@ video {
   width: 100%;
 }
 
-@media (min-width: 640px) {
+@media (min-width: 23.4375rem) {
   .container {
-    max-width: 640px;
+    max-width: 23.4375rem;
   }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 40rem) {
   .container {
-    max-width: 768px;
+    max-width: 40rem;
   }
 }
 
-@media (min-width: 1024px) {
+@media (min-width: 48rem) {
   .container {
-    max-width: 1024px;
+    max-width: 48rem;
   }
 }
 
-@media (min-width: 1280px) {
+@media (min-width: 64rem) {
   .container {
-    max-width: 1280px;
+    max-width: 64rem;
   }
 }
 
-@media (min-width: 1536px) {
+@media (min-width: 80rem) {
   .container {
-    max-width: 1536px;
+    max-width: 80rem;
+  }
+}
+
+@media (min-width: 90rem) {
+  .container {
+    max-width: 90rem;
+  }
+}
+
+@media (min-width: 96rem) {
+  .container {
+    max-width: 96rem;
+  }
+}
+
+@media (min-width: 376px) {
+  .container {
+    max-width: 376px;
   }
 }
 
 body {
   display: flex;
   min-height: 100vh;
+  width: 100%;
   align-items: center;
   justify-content: center;
   background-color: var(--purple-100);
-  font-family: Work Sans, sans-serif;
   background-image: url(/build/images/background-pattern-mobile.svg);
-  background-repeat: no-repeat;
+  background-size: contain;
   background-position: top;
+  background-repeat: no-repeat;
+  font-family: Work Sans, sans-serif;
+}
+
+@media (min-width: 376px) {
+  body {
+    background-image: url(/build/images/background-pattern-desktop.svg);
+  }
 }
 
 .container {
   display: flex;
-  max-width: 20rem;
   flex-direction: column;
-  border-radius: 0.375rem;
   background-color: var(--white);
   padding-left: 1.5rem;
   padding-right: 1.5rem;
@@ -647,6 +671,8 @@ body {
   --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+  max-width: clamp(20rem,14.3662rem + 24.0376vw,36rem)/* fluid from 20rem at 23.4375rem to 36rem at 90rem */;
+  border-radius: clamp(0.375rem,0.1549rem + 0.939vw,1rem)/* fluid from 0.375rem at 23.4375rem to 1rem at 90rem */;
 }
 
 .header {
@@ -656,23 +682,25 @@ body {
 }
 
 .header > img {
-  height: 1.5rem;
-  width: 1.5rem;
+  width: clamp(1.5rem,1.1479rem + 1.5023vw,2.5rem)/* fluid from 1.5rem at 23.4375rem to 2.5rem at 90rem */;
 }
 
 .article {
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   border-bottom-width: 1px;
   border-bottom-color: var(--purple-100);
-  padding-top: 1rem;
-  padding-bottom: 1rem;
 }
 
 .article:last-of-type {
   border-style: none;
   padding-bottom: 0px;
+}
+
+.article {
+  gap: clamp(1rem,0.8239rem + 0.7512vw,1.5rem)/* fluid from 1rem at 23.4375rem to 1.5rem at 90rem */;
+  padding-top: clamp(1rem,0.8239rem + 0.7512vw,1.5rem)/* fluid from 1rem at 23.4375rem to 1.5rem at 90rem */;
+  padding-bottom: clamp(1rem,0.8239rem + 0.7512vw,1.5rem)/* fluid from 1rem at 23.4375rem to 1.5rem at 90rem */;
 }
 
 .question-btn {
@@ -695,22 +723,24 @@ body {
 /* Text Styles */
 
 .header > h1 {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
   font-weight: 700;
   color: var(--purple-950);
+  font-size: clamp(1.875rem,1.2148rem + 2.8169vw,3.75rem)/* fluid type from 1.875rem at 23.4375rem to 3.75rem at 90rem */;
+  line-height: clamp(2.25rem,1.7218rem + 2.2535vw,3.75rem)/* fluid from 2.25rem at 23.4375rem to 3.75rem at 90rem */;
 }
 
 .question {
   text-align: start;
   font-weight: 600;
   color: var(--purple-950);
+  font-size: clamp(1rem,0.956rem + 0.1878vw,1.125rem)/* fluid type from 1rem at 23.4375rem to 1.125rem at 90rem */;
+  line-height: clamp(1.5rem,1.412rem + 0.3756vw,1.75rem)/* fluid from 1.5rem at 23.4375rem to 1.75rem at 90rem */;
 }
 
 .answer {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
   color: var(--purple-600);
+  font-size: clamp(0.875rem,0.831rem + 0.1878vw,1rem)/* fluid type from 0.875rem at 23.4375rem to 1rem at 90rem */;
+  line-height: clamp(1.25rem,1.162rem + 0.3756vw,1.5rem)/* fluid from 1.25rem at 23.4375rem to 1.5rem at 90rem */;
 }
 
 .flex {
@@ -725,12 +755,8 @@ body {
   min-height: 100vh;
 }
 
-.w-6 {
-  width: 1.5rem;
-}
-
-.max-w-xs {
-  max-width: 20rem;
+.w-full {
+  width: 100%;
 }
 
 .flex-col {
@@ -757,10 +783,6 @@ body {
   gap: 1.75rem;
 }
 
-.rounded-md {
-  border-radius: 0.375rem;
-}
-
 .border-b {
   border-bottom-width: 1px;
 }
@@ -769,8 +791,24 @@ body {
   border-bottom-color: var(--purple-100);
 }
 
+.bg-purple-100 {
+  background-color: var(--purple-100);
+}
+
 .bg-white {
   background-color: var(--white);
+}
+
+.bg-\[url\(\/build\/images\/background-pattern-mobile\.svg\)\] {
+  background-image: url(/build/images/background-pattern-mobile.svg);
+}
+
+.bg-top {
+  background-position: top;
+}
+
+.bg-no-repeat {
+  background-repeat: no-repeat;
 }
 
 .px-6 {
@@ -778,28 +816,17 @@ body {
   padding-right: 1.5rem;
 }
 
-.py-4 {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
 .py-6 {
   padding-top: 1.5rem;
   padding-bottom: 1.5rem;
 }
 
+.text-start {
+  text-align: start;
+}
+
 .font-worksans {
   font-family: Work Sans, sans-serif;
-}
-
-.text-3xl {
-  font-size: 1.875rem;
-  line-height: 2.25rem;
-}
-
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
 }
 
 .font-bold {
@@ -818,10 +845,36 @@ body {
   color: var(--purple-950);
 }
 
+.shadow-xl {
+  --tw-shadow: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
+  --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 8px 10px -6px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
 .last-of-type\:border-none:last-of-type {
   border-style: none;
 }
 
 .last-of-type\:pb-0:last-of-type {
   padding-bottom: 0px;
+}
+
+.\~mobile\/desktop\:\~text-sm\/base {
+  font-size: clamp(0.875rem,0.831rem + 0.1878vw,1rem)/* fluid type from 0.875rem at 23.4375rem to 1rem at 90rem */;
+  line-height: clamp(1.25rem,1.162rem + 0.3756vw,1.5rem)/* fluid from 1.25rem at 23.4375rem to 1.5rem at 90rem */;
+}
+
+.\~mobile\/desktop\:\~rounded-md\/2xl {
+  border-radius: clamp(0.375rem,0.1549rem + 0.939vw,1rem)/* fluid from 0.375rem at 23.4375rem to 1rem at 90rem */;
+}
+
+.\~mobile\/desktop\:\~py-4\/6 {
+  padding-top: clamp(1rem,0.8239rem + 0.7512vw,1.5rem)/* fluid from 1rem at 23.4375rem to 1.5rem at 90rem */;
+  padding-bottom: clamp(1rem,0.8239rem + 0.7512vw,1.5rem)/* fluid from 1rem at 23.4375rem to 1.5rem at 90rem */;
+}
+
+@media (min-width: 376px) {
+  .lg-mobile-desktop\:bg-\[url\(\/build\/images\/background-pattern-desktop\.svg\)\] {
+    background-image: url(/build/images/background-pattern-desktop.svg);
+  }
 }

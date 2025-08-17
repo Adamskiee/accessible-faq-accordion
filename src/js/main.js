@@ -43,16 +43,46 @@ class FaqAccordion {
                 this.expandArticle(btn);
                 btn.setAttribute("aria-expanded", "true");
             }
-        })
+        });
+
+        // For better keyboard navigation
+        const questionBtns = this.elements.questionBtns;
+        questionBtns.forEach((btn, index) => {
+            btn.addEventListener("keydown", (e) => {
+                let newIndex;
+                
+                switch (e.key) {
+                    case 'ArrowDown':
+                        newIndex = (index + 1) % questionBtns.length;
+                        questionBtns[newIndex].focus();
+                        console.log("arrowdown");
+                        break;
+
+                    case 'ArrowUp':
+                        newIndex = (index - 1 + questionBtns.length) % questionBtns.length;
+                        console.log("arrowup");
+                        questionBtns[newIndex].focus();
+                        break;
+
+                    case 'Home':
+                        questionBtns[0].focus();
+                        break;
+
+                    case 'End':
+                        questionBtns[questionBtns.length - 1].focus();
+                        break;
+                }
+            });
+        });
     }
 
     collapseArticles() {
         this.elements.questionBtns.forEach(btn => {
-        btn.nextElementSibling.classList.add("hidden");
-        btn.setAttribute("aria-expanded", "false")
-        this.manageIcon(
-            btn.querySelector(".plus-icon"),
-            btn.querySelector(".minus-icon"))
+            btn.nextElementSibling.classList.add("hidden");
+            btn.setAttribute("aria-expanded", "false")
+            this.manageIcon(
+                btn.querySelector(".plus-icon"),
+                btn.querySelector(".minus-icon"))
         })
     }
 

@@ -9,6 +9,7 @@
         --purple-600: hsl(292, 16%, 49%);
         --purple-700: hsl(281, 83%, 54%);
         --purple-950: hsl(292, 42%, 14%);
+        
     }
     @font-face {
         font-family: "Work Sans";
@@ -35,22 +36,20 @@
 
 @layer components {
     body {
-        @apply flex items-center justify-center min-h-screen font-worksans bg-purple-100;
-        background-image: url(/build/images/background-pattern-mobile.svg);
-        background-repeat: no-repeat;
-        background-position: top;
+        @apply flex items-center justify-center min-h-screen font-worksans bg-[url(/build/images/background-pattern-mobile.svg)]
+        lg-mobile-desktop:bg-[url(/build/images/background-pattern-desktop.svg)] w-full bg-no-repeat bg-top bg-purple-100 bg-contain;
     }
     .container {
-        @apply max-w-xs bg-white rounded-md px-6 py-6 flex flex-col shadow-xl;
+        @apply bg-white px-6 py-6 flex flex-col shadow-xl ~mobile/desktop:~rounded-md/2xl ~mobile/desktop:~max-w-xs/xl;
     }
     .header {
         @apply flex items-center gap-7
     }
     .header > img {
-        @apply w-6 h-6;
+        @apply ~mobile/desktop:~w-6/10;
     }
     .article {
-        @apply flex flex-col border-b border-b-purple-100 py-4 last-of-type:border-none last-of-type:pb-0 gap-4;
+        @apply flex flex-col border-b border-b-purple-100 last-of-type:border-none last-of-type:pb-0 ~mobile/desktop:~py-4/6 ~mobile/desktop:~gap-4/6;
     }
     .question-btn {
         @apply flex items-center justify-between gap-2 outline-none;
@@ -64,12 +63,12 @@
     
     /* Text Styles */
     .header > h1 {
-        @apply font-bold text-3xl text-purple-950;
+        @apply font-bold text-purple-950 ~mobile/desktop:~text-3xl/6xl;
     }
     .question {
-        @apply text-purple-950 font-semibold text-start;
+        @apply text-purple-950 font-semibold text-start ~mobile/desktop:~text-base/lg;
     }
     .answer {
-        @apply text-sm text-purple-600
+        @apply text-purple-600 ~mobile/desktop:~text-sm/base
     }
 }
