@@ -779,10 +779,6 @@ body {
   gap: 0.5rem;
 }
 
-.gap-7 {
-  gap: 1.75rem;
-}
-
 .border-b {
   border-bottom-width: 1px;
 }
@@ -857,11 +853,6 @@ body {
 
 .last-of-type\:pb-0:last-of-type {
   padding-bottom: 0px;
-}
-
-.\~mobile\/desktop\:\~text-sm\/base {
-  font-size: clamp(0.875rem,0.831rem + 0.1878vw,1rem)/* fluid type from 0.875rem at 23.4375rem to 1rem at 90rem */;
-  line-height: clamp(1.25rem,1.162rem + 0.3756vw,1.5rem)/* fluid from 1.25rem at 23.4375rem to 1.5rem at 90rem */;
 }
 
 .\~mobile\/desktop\:\~rounded-md\/2xl {
