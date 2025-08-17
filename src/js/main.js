@@ -38,7 +38,7 @@ class FaqAccordion {
       if (e.target.closest(".question-btn")) {
         const btn = e.target.closest(".question-btn");
 
-        if (btn.getAttribute("aria-expanded") == "true") return;
+        if (btn.getAttribute("aria-expanded") === "true") return;
 
         this.expandArticle(btn);
         btn.setAttribute("aria-expanded", "true");
