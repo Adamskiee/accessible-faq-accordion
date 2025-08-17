@@ -12,21 +12,21 @@
   }
   @font-face {
     font-family: "Work Sans";
-    src: url(/accessible-faq-accordion/build/fonts/WorkSans-Regular.ttf) format("truetype");
+    src: url(/build/fonts/WorkSans-Regular.ttf) format("truetype");
     font-weight: 400;
     font-style: normal;
     font-display: swap;
   }
   @font-face {
     font-family: "Work Sans";
-    src: url(/accessible-faq-accordion/build/fonts/WorkSans-SemiBold.ttf) format("truetype");
+    src: url(/build/fonts/WorkSans-SemiBold.ttf) format("truetype");
     font-weight: 600;
     font-style: normal;
     font-display: swap;
   }
   @font-face {
     font-family: "Work Sans";
-    src: url(/accessible-faq-accordion/build/fonts/WorkSans-Bold.ttf) format("truetype");
+    src: url(/build/fonts/WorkSans-Bold.ttf) format("truetype");
     font-weight: 700;
     font-style: normal;
     font-display: swap;
@@ -35,8 +35,8 @@
 
 @layer components {
   body {
-    @apply flex items-center justify-center min-h-screen font-worksans bg-[url(/accessible-faq-accordion/build/images/background-pattern-mobile.svg)]
-        lg-mobile-desktop:bg-[url(/accessible-faq-accordion/build/images/background-pattern-desktop.svg)] w-full bg-no-repeat bg-top bg-purple-100 bg-contain;
+    @apply flex items-center justify-center min-h-screen font-worksans bg-[url(/build/images/background-pattern-mobile.svg)]
+        lg-mobile-desktop:bg-[url(/build/images/background-pattern-desktop.svg)] w-full bg-no-repeat bg-top bg-purple-100 bg-contain;
   }
   .container {
     @apply bg-white px-6 py-6 flex flex-col shadow-xl ~mobile/desktop:~rounded-md/2xl ~mobile/desktop:~max-w-xs/xl;
