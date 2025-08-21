@@ -34,8 +34,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [GitHub](https://github.com/Adamskiee/accessible-faq-accordion)
-- Live Site URL: [Live Site URL](https://adamskiee.github.io/accessible-faq-accordion)
+- Solution URL: [GitHub](https://github.com/adamskiee-frontendmentor-projects/accessible-faq-accordion)
+- Live Site URL: [Live Site URL](https://adamskiee-frontendmentor-projects.github.io/accessible-faq-accordion)
 
 ## My process
 
